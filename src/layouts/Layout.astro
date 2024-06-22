@@ -1,0 +1,30 @@
+---
+import Navbar from "../components/NavBar.astro"
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="imgs/favicon.png" type="image/png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar/>
+    <div class="fixed overlay w-full h-screen top-0"></div>
+    <main class="relative flex flex-col mt-40">
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,89 @@
+:root {
+    --navbar-height: 10rem;
+    /* Altura del navbar al inicio */
+    --navbar-height-scrolled: 6rem;
+    /* Altura del navbar al hacer scroll */
+    --navbar-bg-color: transparent;
+    /* Color del navbar al inicio */
+    --luxus-bg-color: #343a40;
+}
+
+html {
+    font-family: system-ui, sans-serif;
+    background: var(--luxus-bg-color);
+    background-image: url("imgs/main.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0% 50%;
+}
+
+.overlay {
+    background-color: rgba(33, 37, 41, 0.85);
+}
+
+.bg-main {
+    background-color: var(--luxus-bg-color);
+    /* Color oscuro para el navbar al hacer scroll */
+}
+
+.luxus-header {
+    height: calc(100vh - var(--navbar-height));
+}
+
+#navbar {
+    transition: height 0.3s ease, background-color 0.3s ease;
+    height: var(--navbar-height);
+}
+
+#navbar.navbar-scrolled {
+    background-color: #343a40;
+    /* Color oscuro para el navbar al hacer scroll */
+    opacity: 0.85;
+    height: var(--navbar-height-scrolled);
+    /* Altura del navbar al hacer scroll */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Sombra al hacer scroll */
+}
+
+.logo {
+    transition: all 0.2s linear 0s;
+}
+
+#navbar:not(.navbar-scrolled) .logo {
+    width: 110px;
+    opacity: 1;
+    visibility: visible;
+}
+
+#navbar.navbar-scrolled .logo {
+    transform: translateY(-30px);
+    opacity: 0;
+    visibility: hidden;
+    width: 50px;
+}
+
+/*
+
+#navbar {
+    transition: height 0.3s ease, background-color 0.3s ease;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+}
+
+#navbar.navbar-scrolled {
+    background-color: var(--navbar-bg-color-scrolled);
+    height: var(--navbar-height-scrolled);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    transition: transform 0.2s linear, width 0.2s linear;
+    width: var(--logo-width-normal);
+}
+
+#navbar.navbar-scrolled .logo {
+    transform: translateY(var(--logo-translateY-scrolled));
+    width: var(--logo-width-scrolled);
+}
+
+*/

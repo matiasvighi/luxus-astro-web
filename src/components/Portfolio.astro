@@ -1,0 +1,62 @@
+---
+const images = [
+  {
+    url: "gallery/gallery-1.jpg",
+    title: "Gallery 1",
+  },
+  {
+    url: "gallery/gallery-2.jpg",
+    title: "Gallery 2",
+  },
+  {
+    url: "gallery/gallery-3.jpg",
+    title: "Gallery 3",
+  },
+  {
+    url: "gallery/gallery-4.jpg",
+    title: "Gallery 4",
+  },
+  {
+    url: "gallery/gallery-5.jpg",
+    title: "Gallery 5",
+  },
+  {
+    url: "gallery/gallery-6.jpg",
+    title: "Gallery 6",
+  },
+  {
+    url: "gallery/gallery-7.jpg",
+    title: "Gallery 7",
+  },
+  {
+    url: "gallery/gallery-8.jpg",
+    title: "Gallery 8",
+  },
+  {
+    url: "gallery/gallery-9.jpg",
+    title: "Gallery 9",
+  },
+  {
+    url: "gallery/gallery-10.jpg",
+    title: "Gallery 10",
+  },
+  {
+    url: "gallery/gallery-11.jpg",
+    title: "Gallery 11",
+  },
+  {
+    url: "gallery/gallery-12.jpg",
+    title: "Gallery 12",
+  },
+];
+---
+<div class="bg-main w-full">
+    <p class="text-white text-center text-8xl p-20">Portfolio</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0.5" >
+  {
+    images.map((image, index) => (
+        <img src={image.url} alt={image.title} class=" transition duration-300 cursor-pointer hover:scale-105" />
+    ))
+  }
+</div>
