@@ -61,29 +61,3 @@ html {
     visibility: hidden;
     width: 50px;
 }
-
-/*
-
-#navbar {
-    transition: height 0.3s ease, background-color 0.3s ease;
-    height: var(--navbar-height);
-    background-color: var(--navbar-bg-color);
-}
-
-#navbar.navbar-scrolled {
-    background-color: var(--navbar-bg-color-scrolled);
-    height: var(--navbar-height-scrolled);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.logo {
-    transition: transform 0.2s linear, width 0.2s linear;
-    width: var(--logo-width-normal);
-}
-
-#navbar.navbar-scrolled .logo {
-    transform: translateY(var(--logo-translateY-scrolled));
-    width: var(--logo-width-scrolled);
-}
-
-*/

@@ -1,0 +1,49 @@
+---
+import 'air-datepicker/air-datepicker.css'
+import CustomSelect from "./CustomSelect.astro";
+---
+<div class="text-white w-full flex justify-center items-center flex-col py-36">
+    <p class="text-7xl">RESERVAS</p>
+    <div class="grid grid-cols-1 w-96 gap-4 px-2 my-10">
+        <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            placeholder="Nombre"
+            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-luxus sm:text-sm sm:leading-6 bg-white bg-opacity-40 placeholder:text-white"
+        >
+        <input
+            type="email"
+            name="last-name"
+            id="last-name"
+            placeholder="Tel."
+            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-luxus sm:text-sm sm:leading-6 bg-white bg-opacity-40 placeholder:text-white"
+        >
+        <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            placeholder="Email"
+            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-luxus sm:text-sm sm:leading-6 bg-white bg-opacity-40 placeholder:text-white"
+        >
+
+        <CustomSelect/>
+
+        <input
+            type="text"
+            name="fecha-evento"
+            id="fecha-evento"
+            placeholder="Fecha del evento"
+            class="block w-full rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-luxus sm:text-sm sm:leading-6 bg-white bg-opacity-40 placeholder:text-white"
+        >
+    </div>
+    <button class="bg-luxus w-fit p-4 rounded text-lg">ENVIAR</button>
+</div>
+<script>
+    import AirDatepicker from 'air-datepicker'
+    import es from 'air-datepicker/locale/es'
+    
+    new AirDatepicker('#fecha-evento',{
+        locale: es
+    });
+</script>
