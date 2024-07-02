@@ -20,8 +20,8 @@ const { title } = Astro.props;
   <body>
     <Navbar/>
     <div class="fixed overlay w-full h-screen top-0"></div>
-    <main class="relative flex flex-col mt-40">
-      <slot />
+    <main class="relative flex flex-col mt-40 w-full">
+        <slot />
     </main>
   </body>
 </html>

@@ -45,7 +45,7 @@ html {
     /* Sombra al hacer scroll */
 }
 
-.logo {
+.logo, .logo-1 {
     transition: all 0.2s linear 0s;
 }
 
@@ -56,8 +56,22 @@ html {
 }
 
 #navbar.navbar-scrolled .logo {
-    transform: translateY(-30px);
+    width: 50px;
     opacity: 0;
     visibility: hidden;
-    width: 50px;
+    transform: translateY(-14px);
+}
+
+#navbar:not(.navbar-scrolled) .logo-1 {
+    width: 110px;
+}
+
+#navbar.navbar-scrolled .logo-1 {
+    width: 110px;
+    transform: translateY(-7px);
+}
+
+
+.grid-transition {
+    transition: all 0.5s linear 0s;
 }

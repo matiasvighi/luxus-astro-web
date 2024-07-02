@@ -1,0 +1,9 @@
+---
+const { buttonLabel, title, content, imgSrc } = Astro.props;
+---
+<div class="border-gray-500 border rounded-sm text-center flex flex-col justify-start items-center gap-4">
+    <img src={imgSrc} alt="hero" class="w-full object-contain" />
+    <button class="bg-luxus w-fit p-4 rounded text-lg">{buttonLabel}</button>
+    <h3 class="text-4xl">{title}</h3>
+    <p class="px-6 mb-12">{content}</p>
+</div>

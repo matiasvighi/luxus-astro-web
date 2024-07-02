@@ -1,0 +1,31 @@
+---
+import 'leaflet/dist/leaflet.css';
+---
+<div class="grid md:grid-cols-2 grid-cols-1 grid-rows-1 w-full shadow-up-down shadow-gray-800 z-10 bg-main">
+    <div class="">
+        <div id="map" class="h-full"></div>
+    </div>
+    <div class="flex flex-col p-[10%] text-white gap-6">
+        <h3 class="text-4xl">Contacto</h3>
+        <p class="text-xl">Queremos saber de vos, dejanos tu mensaje-. </p>
+        <div class="pl-6 flex flex-col gap-4 mt-4">
+            <div class="flex gap-2 items-center">
+                <i class="fa-solid fa-location-dot"/><span>Villa del Parque, Buenos Aires, Argentina.</span>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i class="fa-solid fa-phone"/><span>(11) 6013-9145</span>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i class="fa-solid fa-envelope"/><span>luxusfotografia@gmail.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    import L from 'leaflet';
+    //{lat: -34.6105, lng: -58.4802};
+    var map = L.map('map').setView([-34.6105, -58.4802], 16).setZoom(15);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+</script>

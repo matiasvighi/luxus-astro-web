@@ -1,0 +1,81 @@
+---
+import Card from "../components/Card.astro"
+
+---
+<div class="bg-main flex flex-col">
+    <div class="flex md:flex-row flex-col justify-center items-center gap-6 my-8">
+        <button class="p-2 rounded text-md text-luxus hover:brightness-75 w-60" data-tab="AUDIOVISUAL">Audiovisual</button>
+        <button class="p-2 rounded text-md text-luxus hover:brightness-75 w-60" data-tab="COMMUNITY-MANAGER">Community Manager</button>
+    </div>
+
+    <div id="tab-content" class="relative">
+        <div class="absolute grid md:grid-cols-3 grid-cols-1 grid-rows-1 w-full py-2 text-white gap-8 p-6 tab-1 grid-transition  top-0">
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-1.jpg" buttonLabel="ENVIAR"/>
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-2.jpg" buttonLabel="ENVIAR"/>
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-3.jpg" buttonLabel="ENVIAR"/>
+        </div>
+        <div class="absolute grid md:grid-cols-3 grid-cols-1 grid-rows-1 w-full py-2 text-white gap-8 p-6 tab-2 grid-transition top-0">
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-4.jpg" buttonLabel="ENVIAR"/>
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-5.jpg" buttonLabel="ENVIAR"/>
+            <Card title="Test" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quam perferendis ex. Reiciendis, voluptate facere, corrupti laborum unde architecto similique sequi doloribus eligendi, aliquam in accusamus molestias eaque repellendus quaerat." imgSrc="imgs/blog-6.jpg" buttonLabel="ENVIAR"/>
+        </div>
+    </div>
+</div>
+<script>
+    //toggle tabs
+    const tabs = document.querySelectorAll("[data-tab]");
+    const tabContent = document.getElementById("tab-content");
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", (e) => {
+            const tabIndex = (e.target as HTMLElement).getAttribute("data-tab");
+            console.log(tabIndex);
+            showTab(tabIndex);
+        });
+    });
+    const tabPanel1 = document.querySelector(".tab-1");
+    const tabPanel2 = document.querySelector(".tab-2");
+    const calculateTabHeight = (tabIndex) => {
+        if (tabIndex === "AUDIOVISUAL") {
+            const tabHeight = tabPanel1.clientHeight;
+            tabContent.style.height = `${tabHeight}px`;
+        } else {
+            const tabHeight = tabPanel2.clientHeight;
+            tabContent.style.height = `${tabHeight}px`;
+        }
+    };
+    const showTab = (tabIndex) => {
+        if (tabIndex === "AUDIOVISUAL") {
+            //show tab 1
+            tabPanel1.classList.remove("opacity-0");
+            tabPanel1.classList.add("opacity-100");
+
+            //hide tab 2
+            tabPanel2.classList.add("opacity-0");
+            tabPanel2.classList.remove("opacity-100");
+
+            tabs[0].classList.add("bg-luxus");
+            tabs[0].classList.add("text-white");
+            tabs[1].classList.remove("bg-luxus");
+            tabs[1].classList.remove("text-white");
+        } else {
+            //hide tab 2
+            tabPanel1.classList.add("opacity-0");
+            tabPanel1.classList.remove("opacity-100");
+
+            //show tab 1
+            tabPanel2.classList.add("opacity-100");
+            tabPanel2.classList.remove("opacity-0");
+
+            tabs[1].classList.add("bg-luxus");
+            tabs[1].classList.add("text-white");
+            tabs[0].classList.remove("bg-luxus");
+            tabs[0].classList.remove("text-white");
+        }
+        calculateTabHeight(tabIndex);
+    };
+    document.addEventListener("DOMContentLoaded", () => {
+        //show tab by default
+        showTab("AUDIOVISUAL");
+    });
+    
+</script>
